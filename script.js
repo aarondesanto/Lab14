@@ -7,7 +7,7 @@ $(document).ready(function() {
          airport: function(array) {
 			
 			var self = $(this);
-			var chars = ['a','b','c','d','e','f','g',' ','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','-'];
+			var chars = ['a','b','c','d','e','f','g',' ','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','-','.',"'","0","1","2","3","4","5","6","7","8","9",":"];
 			var longest = 0;
 			var items = items2 = array.length;
 
@@ -28,9 +28,9 @@ $(document).ready(function() {
 			
 			function testChar(a,b,c,d){
 				if(c >= array.length)
-					setTimeout(function() { testChar(0,0,0,0); }, 1000);				
+					setTimeout(function() { testChar(0,0,0,0); }, 10);				
 				else if(d >= longest)
-					setTimeout(function() { testChar(0,0,c+1,0); }, 1000);
+					setTimeout(function() { testChar(0,0,c+1,0); }, 10);
 				else {
 					$(self).find('.c'+a).html((chars[b]==" ")?"&nbsp;":chars[b]);
 					setTimeout(function() {
@@ -52,12 +52,13 @@ $(document).ready(function() {
 var $mainWrapper = $('<div />').attr('id', 'mainWrapper').appendTo($('body'))
 
 $('<h1 />').appendTo($mainWrapper);
-$('h1').airport(["supercalifragilisticexpialidocious", "   antidisestablishmentarianism"]);
+$('h1').airport(["Travelers are reminded not to leav", "e their luggage unattended.", "All unattended luggage will be rem", "oved and searched without warning."]);
 
 $('<h2 />').appendTo($mainWrapper);
-$('h2').airport([" Sunday", " Monday", " Tuesday", "Wednesday", "Thursday", " Friday", "Saturday"]);
+$('h2').airport(["It is currently: ", "  November 12th", " 2015  11:41am"]);
 
 $('<div />').attr('id', 'contentWrapper').appendTo($('body'));
+$("<p>Content, content, oh wonderful content here.</p>").appendTo('#contentWrapper');
 
 
 
