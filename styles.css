@@ -1,0 +1,25 @@
+span {
+	margin: 1px 2px;
+	padding: 0;
+	text-transform: capitalize;
+	font-family: Courier;
+	color: #FFFFFF;
+	background-color: #000000;
+	
+}
+h2 {
+	text-align: center;
+}
+
+#mainWrapper {
+	padding: 0 5px;
+	width: 52%;
+	margin: 0 auto;
+}
+
+#contentWrapper {
+	width: 70%;
+	height: 800px;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
